@@ -1,0 +1,102 @@
+*, *::before, *::after {
+  box-sizing:border-box;
+    font-family: 'Roboto Slab', serif;
+    }
+:root {
+  --hue-neutral:#6cf;
+  --hue-wrong: 0;
+  --hue-correct: 145;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  display:flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #6cf;
+}
+
+body.correct {
+  --hue: var(--hue-correct);
+  background-color: rgb(120, 224, 120);
+}
+
+body.wrong {
+  --hue: var(--hue-wrong);
+  background-color: rgb(231, 126, 126);
+}
+
+.container {
+  width: 800px;
+  max-width: 80%;
+  background:#6cf;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 10px;
+  box-shadow: 0 0 10px 2px;
+  }
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.btn {
+  border-color:#08038C;
+  border-radius: 5px;
+  outline:double;
+  color:black;
+  border: 1px solid hsl(var(--hue), 100%, 30%);
+  background-color:#6cf;
+  padding: 5px 10px;
+
+}
+
+.btn.hover {
+  border-color: black;
+}
+
+.btn.correct {
+  --hue: var(--hue-correct);
+  background-color: green;
+}
+
+.btn.wrong {
+  --hue: var(--hue-wrong);
+  background-color: red;
+}
+
+.start-btn, .next-btn {
+  border:#08038C;
+  border-radius: 50px;
+  outline:double;
+  background: black;
+  color:white;
+  width: 100px;
+  height: 35px;
+  border-radius: 20px;
+  cursor: pointer;
+  float: right;
+  margin: 10px;
+}
+
+.controls {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-grid input:checked .button{
+  background-color: #08038C;
+  
+}
+
+.hide {
+  display: none;
+}
